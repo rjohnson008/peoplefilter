@@ -1,9 +1,13 @@
-<div class="hero-unit">
-	<h1>Welcome to Peoplefilter</h1>
-<p>
-	Discover people interested in being discovered and filter them by common interests.
-</p>
-<p>
-	<%= link_to "Get Started >", "#", class: "btn btn-primary btn-large" %>
-</p>
-</div>
+<% unless user_signed_in? %>
+	<div class="hero-unit">
+		<h1>Welcome to Peoplefilter</h1>
+	<p>
+		Discover people interested in being discovered and filter them by common interests.
+	</p>
+	<p>
+		<%= link_to "Get Started >", new_user_registration_path, class: "btn btn-primary btn-large" %>
+	</p>
+	</div>
+<% else %>
+	<h1>You're signed in!</h1>
+<% end %>
